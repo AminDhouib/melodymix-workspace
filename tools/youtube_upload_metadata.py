@@ -65,7 +65,7 @@ def add_tag(out, seen, tag, limit):
 def item_tags(item, extra_tags=(), include_defaults=True, limit=YOUTUBE_TAG_LIMIT):
     track_title = clean_tag(item.get("source_title")) or clean_tag(item.get("title"))
     candidates = []
-    if track_title:
+    if track_title and item.get("auto_track_tags", True):
         candidates.extend(
             (
                 f"{track_title} Spirit Tracks",

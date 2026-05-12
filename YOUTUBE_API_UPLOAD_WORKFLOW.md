@@ -129,6 +129,8 @@ Both upload scripts format titles as:
 
 Tags are generated from the track name, Spirit Tracks soundtrack terms, Nintendo/Zelda music terms, and `MelodyMix`. The helper keeps the generated list under YouTube's 500-character tag limit.
 
+For non-Spirit Tracks manifests, set `auto_track_tags` to `false` on each item and provide explicit `tags`; otherwise the helper's Spirit Tracks track-title templates are included.
+
 The Studio/browser uploader requires playlist selection, tags, and monetization `On` by default. Use the `--allow-missing-*` flags only for manual recovery runs where you intend to inspect Studio yourself afterward.
 
 ## Important YouTube API Caveat
