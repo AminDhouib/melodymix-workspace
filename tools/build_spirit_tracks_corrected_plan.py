@@ -193,6 +193,11 @@ def main():
     parser.add_argument("--out-tsv", type=Path, default=DEFAULT_OUT_TSV)
     parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR)
     parser.add_argument("--min-score", type=float, default=0.90)
+    parser.add_argument(
+        "--force-rerender-all",
+        action="store_true",
+        help="Render every manifest item into the corrected output dir; rows that would reuse an older render become full-track repeats.",
+    )
     args = parser.parse_args()
 
     manifest = load_json(args.manifest)
@@ -210,7 +215,12 @@ def main():
         "manual_overrides": str(args.manual_overrides),
         "candidate_seam_scores": str(args.candidate_scores) if args.use_candidate_scores else "",
         "use_candidate_seam_scores": args.use_candidate_scores,
-        "rule": "manual overrides first; then optionally seam-scored PyMusicLooper candidates at or above min score; then rank-1 PyMusicLooper candidates; full-track repeat for weak or missing candidates; existing unflagged renders reused",
+        "force_rerender_all": args.force_rerender_all,
+        "rule": (
+            "manual overrides first; then optionally seam-scored PyMusicLooper candidates at or above min score; "
+            "then rank-1 PyMusicLooper candidates; full-track repeat for weak or missing candidates; "
+            "existing unflagged renders reused unless force_rerender_all is true"
+        ),
     }
 
     plan_rows = []
@@ -219,6 +229,15 @@ def main():
         item = dict(item)
         track = int(item["source_track_number"])
         decision = choose_mode(item, pml, waveform, args.min_score, manual_overrides, candidate_scores)
+        if args.force_rerender_all and decision["requires_rerender"] != "True":
+            decision = {
+                **decision,
+                "loop_mode": "full_track",
+                "loop_start": "",
+                "loop_end": "",
+                "reason": f"{decision['reason']}_forced_full_track_rebuild",
+                "requires_rerender": "True",
+            }
         if decision["requires_rerender"] == "True":
             output = corrected_output_path(args.output_dir, item)
             item["file"] = str(output)
