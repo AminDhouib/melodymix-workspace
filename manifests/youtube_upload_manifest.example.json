@@ -1,0 +1,25 @@
+{
+  "base_schedule": "2026-05-12T12:00:00-04:00",
+  "schedule_spacing_hours": 4,
+  "playlist": "",
+  "defaults": {
+    "privacyStatus": "private",
+    "categoryId": "10",
+    "madeForKids": false,
+    "tags": [
+      "OST",
+      "Extended",
+      "Video Game Music"
+    ]
+  },
+  "items": [
+    {
+      "upload_order": 1,
+      "file": "outputs/extended/001 - Track Title [14-29-24 timecode].mp4",
+      "thumbnail": "inputs/thumbnails/series-thumbnail.jpg",
+      "title": "001. Track Title - Game Name [OST] - Extended!",
+      "description": "Full Playlist: PLAYLIST_URL\n\nExtension & visuals were made by MelodyMix.",
+      "schedule_offset_hours": 0
+    }
+  ]
+}

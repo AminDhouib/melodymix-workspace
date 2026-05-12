@@ -1,0 +1,4 @@
+id	enabled	audio	visual	output	target	target_format	fade	output_fps	audio_sample_rate	video_codec	cq	loop_mode	loop_start	loop_end
+001	yes	inputs/audio/001-source.mp3	inputs/visuals/visual-template.mp4	outputs/extended/001 - Track Title [14-29-24 timecode].mp4	14:29:24	mmssff	5	30	48000	hevc_nvenc	24	auto
+002	yes	inputs/audio/002-source.mp3	inputs/visuals/visual-template.mp4	outputs/extended/002 - Story Cue [14-29-24 timecode].mp4	14:29:24	mmssff	5	30	48000	hevc_nvenc	24	full
+003	no	inputs/audio/003-source.mp3	inputs/visuals/visual-template.mp4	outputs/extended/003 - Manual Loop [14-29-24 timecode].mp4	14:29:24	mmssff	5	30	48000	hevc_nvenc	24	manual	12.345	67.890

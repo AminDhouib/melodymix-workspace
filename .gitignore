@@ -1,0 +1,80 @@
+# Secrets and OAuth material
+secrets/
+client_secret*.json
+*token*.json
+*credentials*.json
+
+# Local/generated media inputs and outputs
+*.mp3
+*.m4a
+*.wav
+*.flac
+*.aac
+*.opus
+*.webm
+*.mp4
+*.mov
+*.mkv
+*.avi
+
+# Generated screenshots, thumbnails, waveform previews, and analysis frames
+*.png
+*.jpg
+*.jpeg
+*.webp
+
+# Render/cache/log output
+.render-work*/
+render-logs/
+upload-logs/
+upload-screenshots/
+studio-finish-screenshots/
+.superpowers/
+.yt-dlp-*.txt
+
+# Existing local batch artifact folders
+StarFox OST/
+StarFox OST 4K/
+StarFox OST Extended/
+Zelda Spirit Tracks Source Audio/
+Zelda Spirit Tracks Visual/
+Zelda Spirit Tracks Extended/
+Zelda Spirit Tracks Extended Corrected/
+Zelda Spirit Tracks Loudness/
+MelodyMix Analysis/
+mm_ost Analysis/
+element_clones/
+remotion/
+
+# Local state that may contain channel/video/account details
+state/*
+!state/
+!state/.gitkeep
+Zelda Spirit Tracks Metadata/*
+!Zelda Spirit Tracks Metadata/
+!Zelda Spirit Tracks Metadata/manual_loop_overrides.tsv
+!Zelda Spirit Tracks Metadata/waveform_loop_boundary_audit.md
+!Zelda Spirit Tracks Metadata/pymusiclooper_loop_candidates.md
+Zelda Spirit Tracks Metadata/*state*.json
+Zelda Spirit Tracks Metadata/upload_state.json
+Zelda Spirit Tracks Metadata/delete_high_loop_risk_uploaded.json
+
+# Python cache and virtualenvs
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Keep repo scaffolding directories
+!inputs/
+!inputs/**/
+!inputs/**/.gitkeep
+!outputs/
+!outputs/**/
+!outputs/**/.gitkeep
+!metadata/
+!metadata/**/
+!metadata/**/.gitkeep
+!manifests/
+!manifests/**/
+!manifests/**/*.example.*
