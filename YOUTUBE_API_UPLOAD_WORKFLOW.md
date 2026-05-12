@@ -15,8 +15,6 @@ As of 2026-05-11, the previous recent Spirit Tracks API upload batch should be c
 - Corrected render verification passed for all 104 manifest items.
 - Playlist insertion, monetization, and post-upload fixes still need the Studio/browser finish pass.
 
-Start a resumed session with `SESSION_HANDOFF.md`.
-
 ## Scope Policy
 
 Use only:

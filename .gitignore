@@ -47,6 +47,7 @@ element_clones/
 remotion/
 
 # Local state that may contain channel/video/account details
+SESSION_HANDOFF.md
 state/*
 !state/
 !state/.gitkeep
